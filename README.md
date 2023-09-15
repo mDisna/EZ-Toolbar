@@ -138,7 +138,9 @@ There are 10 themes available, including the default theme. Apply a theme using 
 
 You can interact with the toolbar using JavaScript.
 
-### Component IDs
+### Components
+
+Below are the element IDs and corresponding hooks (functions) for each button and dropdown in the toolbar.
 
 | Component                | Component ID            | Hook (Function Name)     |
 | ------------------------ | ----------------------- | ------------------------ |
@@ -171,6 +173,8 @@ You can interact with the toolbar using JavaScript.
 | Undo Button              | `#ez-undo`              | `ez_undo()`              |
 | Redo Button              | `#ez-redo`              | `ez_redo()`              |
 | Save Button              | `#ez-save`              | `ez_save()`              |
+
+Custom buttons follow the same naming conventions (id = `#elemend-id`, function = `element_id()`)
 
 ### Active Class
 
