@@ -1,0 +1,67 @@
+.ez-toolbar {
+  background-color: #222f3e;
+}
+
+.ez-toolbar-group {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.ez-toolbar-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff; /* Apply font color here */
+}
+
+.ez-toolbar-button.active,
+.ez-toolbar-button:hover {
+  background-color: #4a5562;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.ez-toolbar-dropdown {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  height: 32px;
+  color: #ffffff; /* Apply font color here */
+}
+
+.ez-toolbar-dropdown:hover {
+  background-color: #4a5562;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Flex container for .ez-toolbar-group */
+.ez-toolbar-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: flex-start; /* Align items at the start */
+}
+
+/* Floating .ez-toolbar-group on smaller screens */
+@media (max-width: 768px) {
+  .ez-toolbar-row {
+    display: block;
+    overflow: auto; /* Add overflow property */
+  }
+
+  .ez-toolbar-group {
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .clear-float {
+    clear: both;
+  }
+}
