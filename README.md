@@ -12,6 +12,7 @@ The EZ Toolbar is a customizable and extensible JavaScript plugin for adding a a
 - [Customization](#customization)
 - [Themes](#themes)
 - [API Reference](#api-reference)
+- [Code Snippets](#code-snippets)
 
 ## Introduction
 
@@ -209,4 +210,159 @@ Example:
 ez_font_family = (fontFamily) => {
   alert(fontFamily);
 };
+```
+
+## Code Snippets
+
+### Emoji Dropdown
+
+To add a dropdown menu with various emojis to the Emoticons Button (`#ez-emoticons`), add the following to your project:
+
+#### CSS
+
+```css
+/* Styles for the emoticons dropdown */
+#ez-emoticons-dropdown {
+  position: absolute;
+  background-color: #222f3e; /* Match the toolbar background color */
+  width: 250px; /* Adjust the width to your preference */
+  border-radius: 4px;
+  margin-top: 5px; /* Add margin-top */
+  display: none; /* Hide the dropdown by default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+.emoticons-container {
+  padding: 5px; /* Add padding to the container */
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line if necessary */
+}
+
+.emoticon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px; /* Add padding to each button */
+  color: #ffffff;
+  flex: 1; /* Distribute available width evenly among buttons */
+}
+
+.emoticon-button:hover {
+  background-color: #4a5562;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+```
+
+#### JavaScript
+
+```javascript
+let emoticonsDropdownOpen = false; // Track the state of the emoticons dropdown
+
+// Function to show/hide the emoticons dropdown
+function ez_emoticons() {
+  const emoticonsDropdown = document.getElementById("ez-emoticons-dropdown");
+  const emoticonsButton = document.getElementById("ez-emoticons");
+
+  if (emoticonsDropdownOpen) {
+    // Close the dropdown if it's already open
+    emoticonsDropdown.style.display = "none";
+  } else {
+    // Calculate the position to place the dropdown below the button
+    const buttonRect = emoticonsButton.getBoundingClientRect();
+    emoticonsDropdown.style.display = "block";
+    emoticonsDropdown.style.left = buttonRect.left + "px";
+    emoticonsDropdown.style.top = buttonRect.bottom + "px";
+  }
+
+  // Toggle the state of the emoticons dropdown
+  emoticonsDropdownOpen = !emoticonsDropdownOpen;
+}
+
+// Add a click event listener to the document to close the dropdown when clicking anywhere
+document.addEventListener("click", (event) => {
+  const emoticonsDropdown = document.getElementById("ez-emoticons-dropdown");
+  const emoticonsButton = document.getElementById("ez-emoticons");
+
+  if (emoticonsDropdownOpen) {
+    const isClickInsideDropdown = emoticonsDropdown.contains(event.target);
+    const isClickOnButton = emoticonsButton.contains(event.target);
+
+    if (!isClickInsideDropdown && !isClickOnButton) {
+      emoticonsDropdown.style.display = "none";
+      emoticonsDropdownOpen = false;
+    }
+  }
+});
+const emoticonsList = [];
+
+// Emoticons and Miscellaneous Symbols
+for (let i = 0x1f600; i <= 0x1f64f; i++) {
+  emoticonsList.push(String.fromCodePoint(i));
+}
+
+// Miscellaneous Symbols and Pictographs
+for (let i = 0x1f300; i <= 0x1f5ff; i++) {
+  emoticonsList.push(String.fromCodePoint(i));
+}
+
+// Transport and Map Symbols
+for (let i = 0x1f680; i <= 0x1f6c0; i++) {
+  emoticonsList.push(String.fromCodePoint(i));
+}
+
+// Flags
+for (let i = 0x1f1e6; i <= 0x1f1ff; i++) {
+  emoticonsList.push(String.fromCodePoint(i));
+}
+
+// Food and Drink (Example range, you can add more)
+for (let i = 0x1f300; i <= 0x1f320; i++) {
+  emoticonsList.push(String.fromCodePoint(i));
+}
+
+// Create the emoticons dropdown
+const emoticonsDropdown = document.createElement("div");
+emoticonsDropdown.id = "ez-emoticons-dropdown";
+
+// Create a container for the emoticons
+const emoticonsContainer = document.createElement("div");
+emoticonsContainer.classList.add("emoticons-container");
+
+// Create buttons for each emoticon
+emoticonsList.forEach((emoticon, index) => {
+  const emoticonButton = document.createElement("button");
+  emoticonButton.innerText = emoticon;
+  emoticonButton.classList.add("emoticon-button");
+  emoticonButton.addEventListener("click", () => {
+    // Handle emoticon button click here (e.g., insert the emoticon in the text)
+    alert(`Emoticon clicked: ${emoticon}`);
+  });
+
+  emoticonsContainer.appendChild(emoticonButton);
+});
+
+emoticonsDropdown.appendChild(emoticonsContainer);
+
+// Attach the emoticons dropdown to the editor
+const editor = document.getElementById("editor");
+editor.appendChild(emoticonsDropdown);
+
+// Assuming you have a function called insertEmoji
+function insertEmoji(emoji) {
+  // Your insertEmoji function logic here
+  console.log(`Emoji selected: ${emoji}`);
+}
+
+// Get all emoticon buttons
+const emoticonButtons = document.querySelectorAll(".emoticon-button");
+
+// Add a click event listener to each emoticon button
+emoticonButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const emoji = this.textContent; // Get the emoji text from the button
+    insertEmoji(emoji); // Call the insertEmoji function with the emoji
+  });
+});
 ```
