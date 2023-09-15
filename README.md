@@ -51,7 +51,7 @@ ezToolbar("#myTextarea");
 
 ## Options
 
-You can customize the toolbar by passing in various options. These are the options available: All options are optional.
+You can customize the toolbar by passing in various options. These are the options available - all options are optional:
 
 - `fontStyles`: An array of style options. This will replace the default styles.
 - `fontFamilies`: An array of font names. Specified fonts will be added in addition to the default ones.
