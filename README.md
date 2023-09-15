@@ -22,6 +22,15 @@ The EZ Toolbar Plugin provides a flexible way to add a feature-rich toolbar to y
 To get started with the EZ Toolbar Plugin, you need to include the following in the <HEAD> section of your HTML:
 
 ```html
+<!-- Point this to the location of the EZ Toolbar CSS file -->
+<link href="css/ez-toolbar.css.css" rel="stylesheet" />
+<!-- Point this to the location of the EZ Toolbar JavaScript file -->
+<script src="js/ez-toolbar.js"></script>
+```
+
+These plugin requires both TailWind and Font Awesome. Add the following to your <HEAD> section to include them:
+
+```html
 <link
   href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
   rel="stylesheet"
@@ -30,13 +39,7 @@ To get started with the EZ Toolbar Plugin, you need to include the following in 
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
   rel="stylesheet"
 />
-<!-- Point this to the location of the EZ Toolbar CSS file -->
-<link href="css/ez-toolbar.css.css" rel="stylesheet" />
-<!-- Point this to the location of the EZ Toolbar JavaScript file -->
-<script src="js/ez-toolbar.js"></script>
 ```
-
-Add the following to the bottom of your HTML file, just before the closing </BODY> tag:
 
 ## Usage
 
@@ -117,7 +120,7 @@ customButtons: [
 
 ## Themes
 
-There are 10 themes available, including the default theme.
+There are 10 themes available, including the default theme. Apply a theme using the `themeName` [option][#options]. You can also manually set the toolbar background and font color - see [Options][#options].
 | Theme Name| Preview |
 | --------- | --- |
 | **Default** | ![Default Theme](_readme/theme-Default.png) |
