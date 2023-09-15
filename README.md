@@ -140,37 +140,37 @@ You can interact with the toolbar using JavaScript.
 
 ### Component IDs
 
-| Component                | ID                     |
-| ------------------------ | ---------------------- |
-| Font Style Dropdown      | `ez-font-style`        |
-| Font Family Dropdown     | `ez-font-family`       |
-| Font Size Dropdown       | `ez-font-size`         |
-| Bold Button              | `ez-bold`              |
-| Italic Button            | `ez-italic`            |
-| Underline Button         | `ez-underline`         |
-| Strikethrough Button     | `ez-strikethrough`     |
-| Align Left Button        | `ez-align-left`        |
-| Align Center Button      | `ez-align-center`      |
-| Align Right Button       | `ez-align-right`       |
-| Align Justify Button     | `ez-align-justify`     |
-| Decrease Indent Button   | `ez-decrease-indent`   |
-| Increase Indent Button   | `ez-increase-indent`   |
-| Special Character Button | `ez-special-character` |
-| Emoticons Button         | `ez-emoticons`         |
-| Numbered List Button     | `ez-numbered-list`     |
-| Bullet List Button       | `ez-bullet-list`       |
-| Font Color Button        | `ez-font-color`        |
-| Highlight Color Button   | `ez-highlight-color`   |
-| Background Color Button  | `ez-background-color`  |
-| Line Spacing Dropdown    | `ez-line-spacing`      |
-| Insert Table Button      | `ez-insert-table`      |
-| Insert Divider Button    | `ez-insert-divider`    |
-| Insert Link Button       | `ez-insert-link`       |
-| Remove Link Button       | `ez-remove-link`       |
-| Clear Formatting Button  | `ez-clear-formatting`  |
-| Undo Button              | `ez-undo`              |
-| Redo Button              | `ez-redo`              |
-| Save Button              | `ez-save`              |
+| Component                | Component ID            | Hook (Function Name)     |
+| ------------------------ | ----------------------- | ------------------------ |
+| Font Style Dropdown      | `#ez-font-style`        | `ez_font_style(value)`   |
+| Font Family Dropdown     | `#ez-font-family`       | `ez_font_family(value)`  |
+| Font Size Dropdown       | `#ez-font-size`         | `ez_font_size(value)`    |
+| Bold Button              | `#ez-bold`              | `ez_bold()`              |
+| Italic Button            | `#ez-italic`            | `ez_italic()`            |
+| Underline Button         | `#ez-underline`         | `ez_underline()`         |
+| Strikethrough Button     | `#ez-strikethrough`     | `ez_strikethrough()`     |
+| Align Left Button        | `#ez-align-left`        | `ez_align_left()`        |
+| Align Center Button      | `#ez-align-center`      | `ez_align_center()`      |
+| Align Right Button       | `#ez-align-right`       | `ez_align_right()`       |
+| Align Justify Button     | `#ez-align-justify`     | `ez_align_justify()`     |
+| Decrease Indent Button   | `#ez-decrease-indent`   | `ez_decrease_indent()`   |
+| Increase Indent Button   | `#ez-increase-indent`   | `ez_increase_indent()`   |
+| Special Character Button | `#ez-special-character` | `ez_special_character()` |
+| Emoticons Button         | `#ez-emoticons`         | `ez_emoticons()`         |
+| Numbered List Button     | `#ez-numbered-list`     | `ez_numbered_list()`     |
+| Bullet List Button       | `#ez-bullet-list`       | `ez_bullet_list()`       |
+| Font Color Button        | `#ez-font-color`        | `ez_font_color()`        |
+| Highlight Color Button   | `#ez-highlight-color`   | `ez_highlight_color()`   |
+| Background Color Button  | `#ez-background-color`  | `ez_background_color()`  |
+| Line Spacing Dropdown    | `#ez-line-spacing`      | `ez_line_spacing()`      |
+| Insert Table Button      | `#ez-insert-table`      | `ez_insert_table()`      |
+| Insert Divider Button    | `#ez-insert-divider`    | `ez_insert_divider()`    |
+| Insert Link Button       | `#ez-insert-link`       | `ez_insert_link()`       |
+| Remove Link Button       | `#ez-remove-link`       | `ez_remove_link()`       |
+| Clear Formatting Button  | `#ez-clear-formatting`  | `ez_clear_formatting()`  |
+| Undo Button              | `#ez-undo`              | `ez_undo()`              |
+| Redo Button              | `#ez-redo`              | `ez_redo()`              |
+| Save Button              | `#ez-save`              | `ez_save()`              |
 
 ### Active Class
 
