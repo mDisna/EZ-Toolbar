@@ -61,7 +61,7 @@ You can customize the toolbar by passing in various options. These are the optio
   - `id`: a unique ID for the button _(Required)_
   - `faClass`: The FontAwesome class. _(Required)_ See: https://fontawesome.com/icons
   - `hoverText`: Text shown when you mouseover the button. Is also used for screen readers. _(Optional)_
-- `themeName`: The name of a [predefined theme][#themes].
+- `themeName`: The name of a [predefined theme](#themes).
 - `toolbarFontColor`: Custom font color for the toolbar. Overrides the theme.
 - `toolbarBackgroundColor`: Custom background color for the toolbar. Overrides the theme.
 - `sections`: An array of group names to display in the toolbar. if omitted, all sections will be displayed.
@@ -120,7 +120,7 @@ customButtons: [
 
 ## Themes
 
-There are 10 themes available, including the default theme. Apply a theme using the `themeName` [option][#options]. You can also manually set the toolbar background and font color - see [Options][#options].
+There are 10 themes available, including the default theme. Apply a theme using the `themeName` [option](#options). You can also manually set the toolbar background and font color - see [Options](#options).
 | Theme Name| Preview |
 | --------- | --- |
 | **Default** | ![Default Theme](_readme/theme-Default.png) |
